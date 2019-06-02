@@ -42,10 +42,14 @@ function loadFile(input) {
     // console.log(data)
     // console.log(input)
     // console.log(data[input])
-    // fs.readFile('./data', (err, data) => {
-    //   if (err) throw err;
-    //   console.log(data[input]);
-    // });
+
+    var file = './data/' + data[input];
+    console.log(file)
+
+    fs.readFile(file, "utf8", (err, data) => {
+      if (err) throw err;
+      console.log(data);
+    });
 
   })
 }
@@ -56,8 +60,8 @@ function loadFile(input) {
 //check against data array, loop through 
 //return the filename as a new var pass var through a readfile
 
-//example readFile
-fs.readFile('index.js', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
+//example readFile that WORKS
+// fs.readFile('index.js', 'utf8', (err, data) => {
+//   if (err) throw err;
+//   console.log(data);
+// });
